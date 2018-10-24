@@ -11,8 +11,8 @@ void setup()
 {
    pinMode(10, OUTPUT);
    Serial.begin(9600);
-   batt1 = new Battery(1);
-	batt2 = new Battery(2);
+   batt1 = new Battery(12);
+	batt2 = new Battery(13);
 }
 
 
@@ -38,8 +38,8 @@ void stream(float v1, float v2, int shutdown)
 
 void loop()
 {
-	float volt1 = batt1->voltage();
-	float volt2 = batt2->voltage();
+	double volt1 = batt1->voltage();
+	double volt2 = batt2->voltage();
 	
 	bool alarming = batt1->alarming() || batt2->alarming();
 	

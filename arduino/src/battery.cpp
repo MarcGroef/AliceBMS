@@ -31,8 +31,9 @@ float Battery::voltage()
 	float battVoltage = readVoltage * (d_totalResistance / d_secondResistor) ;
 	if (battVoltage < d_thresholdVoltage && !d_timerStarted)
 		startTimer();
-	if (battVoltage <= d_thresholdVoltage)
+	if (battVoltage >= d_thresholdVoltage)
 		stopTimer();
+	return battVoltage;
 }
 
 void Battery::startTimer()
