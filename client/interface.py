@@ -12,8 +12,8 @@ ser.write('start')
 
 
 def shutdown():
-	print 'shutdown!'
-	#os.system('sudo shutdown -fP 0')
+	#print 'shutdown!'
+	os.system('sudo shutdown -fP 0')
 
 
 while True:
